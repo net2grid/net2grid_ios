@@ -1,0 +1,66 @@
+/* GENERAL */
+"general-graph-loading" = "Loading data...";
+"general-error-connection-lost" = "The connection with the SmartBridge was lost";
+"general-cancel" = "Cancel";
+"general-ok" = "OK";
+"general-seconds" = "seconds";
+"general-second" = "second";
+
+/* ENTRY */
+"entry-message" = "We are checking your connection";
+
+/* MENU */
+"menu-onboarding" = "Connect SmartBridge";
+
+/* LIVE */
+"live-current-title-1" = "Current";
+"live-current-title-2" = "power";
+"live-current-title-3" = "usage";
+
+"live-update-next" = "Next update in [value] [seconds]";
+
+"live-graph-no-data" = "No data available yet,\nwe need some time to collect the data";
+
+"live-graph-power-title" = "Power";
+"live-graph-energy-title" = "Energy";
+"live-graph-gas-title" = "Gas";
+
+"live-graph-hour-scale" = "last hour";
+"live-graph-day-scale" = "24 hours";
+"live-graph-2-days-scale" = "48 hours";
+"live-graph-month-scale" = "30 days";
+"live-graph-year-scale" = "52 weeks";
+
+/* SWITCH NETWORK */
+"switch-network-steps" = "Go to settings > WiFi to switch to the same network as your SmartBridge.";
+"switch-network-wifi-settings" = "Go to WiFi settings";
+"switch-network-current-1" = "Your device is currently on the network";
+"switch-network-current-2" = "but your SmartBridge is on";
+"switch-network-current-3" = ".";
+"switch-network-current-none" = "You are currently not connected to any WiFi network.";
+
+/* ONBOARDING: Connect network */
+"onboarding-connect-network-title" = "Connect to SmartBridge";
+"onboarding-connect-network-wifi-settings" = "Go to WiFi settings";
+"onboarding-connect-network-description-1" = "1. Open your WiFi settings\n";
+"onboarding-connect-network-description-2" = "2. On the back of the SmartBridge you’ll find information needed to connect\n";
+"onboarding-connect-network-description-3" = "3. The SSID is sbwf- plus the last four characters of your MAC address\n";
+"onboarding-connect-network-description-3-uppercase" = "- This is always uppercase or digits -\n";
+"onboarding-connect-network-description-4" = "4. The password is sbwf- plus the SmartBridge shortcode\n";
+"onboarding-connect-network-description-4-uppercase" = "- This is always uppercase, lowercase or digits -\n";
+"onboarding-connect-network-description-5" = "5. Return to this app";
+
+/* ONBOARDING: Ping */
+"onboarding-ping-title" = "We are connecting with the SmartBridge...";
+"onboarding-ping-connected" = "Connected!";
+
+/* ONBOARDING: Choose Wifi */
+"onboarding-choose-wifi-title" = "Select your home network";
+"onboarding-choose-wifi-password-title" = "Please enter WiFi password";
+"onboarding-choose-wifi-password-placeholder" = "Password...";
+
+/* ONBOARDING: Join */
+"onboarding-join-title" = "We are verifying your connection...";
+"onboarding-join-connected" = "Connected!";
+
+"image-onboarding-qr" = "onboarding_qr";

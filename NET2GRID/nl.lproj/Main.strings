@@ -1,0 +1,66 @@
+/* GENERAL */
+"general-graph-loading" = "Bezig met het laden van data...";
+"general-error-connection-lost" = "De verbinding met uw SmartBridge is verloren";
+"general-cancel" = "Annuleren";
+"general-ok" = "OK";
+"general-seconds" = "seconden";
+"general-second" = "seconde";
+
+/* ENTRY */
+"entry-message" = "We controleren uw verbinding";
+
+/* MENU */
+"menu-onboarding" = "Verbinden met SmartBridge";
+
+/* LIVE */
+"live-current-title-1" = "Huidig";
+"live-current-title-2" = "vermogen";
+"live-current-title-3" = "";
+
+"live-update-next" = "Volgende update over [value] [seconds]";
+
+"live-graph-no-data" = "Geen data beschikbaar, er wordt nog data verzameld";
+
+"live-graph-power-title" = "Vermogen";
+"live-graph-energy-title" = "Energie";
+"live-graph-gas-title" = "Gas";
+
+"live-graph-hour-scale" = "afgelopen uur";
+"live-graph-day-scale" = "24 uur";
+"live-graph-2-days-scale" = "48 uur";
+"live-graph-month-scale" = "30 dagen";
+"live-graph-year-scale" = "52 weken";
+
+/* SWITCH NETWORK */
+"switch-network-steps" = "Ga naar instellingen > WiFi om te verbinden met hetzelfde netwerk als uw SmartBridge.";
+"switch-network-wifi-settings" = "Ga naar WiFi instellingen";
+"switch-network-current-1" = "Uw apparaat is momenteel verbonden met het netwerk";
+"switch-network-current-2" = "maar uw SmartBridge is verbonden met";
+"switch-network-current-3" = ".";
+"switch-network-current-none" = "U bent momenteel niet verbonden met een WiFi netwerk.";
+
+/* ONBOARDING: Connect network */
+"onboarding-connect-network-title" = "Verbind met SmartBridge";
+"onboarding-connect-network-wifi-settings" = "Ga naar WiFi instellingen";
+"onboarding-connect-network-description-1" = "1. Open je WiFi instellingen\n";
+"onboarding-connect-network-description-2" = "2. Op de achterkant van de SmartBridge vind je de informatie die je nodig hebt\n";
+"onboarding-connect-network-description-3" = "3. De netwerknaam is sbwf- plus de laatste vier karakters van je MAC adres\n";
+"onboarding-connect-network-description-3-uppercase" = "- Hier worden hoofdletters en cijfers gebruikt -\n";
+"onboarding-connect-network-description-4" = "4. Het wachtwoord is sbwf- plus de SmartBridge shortcode\n";
+"onboarding-connect-network-description-4-uppercase" = "- Hier worden hoofdletters, kleine letters en cijfers gebruikt -\n";
+"onboarding-connect-network-description-5" = "5. Keer terug naar deze app";
+
+/* ONBOARDING: Ping */
+"onboarding-ping-title" = "Er wordt verbinding gemaakt met de SmartBridge…";
+"onboarding-ping-connected" = "Verbonden!";
+
+/* ONBOARDING: Choose Wifi */
+"onboarding-choose-wifi-title" = "Select jouw thuisnetwerk";
+"onboarding-choose-wifi-password-title" = "Voer uw WiFi wachtwoord in";
+"onboarding-choose-wifi-password-placeholder" = "Wachtwoord…";
+
+/* ONBOARDING: Join */
+"onboarding-join-title" = "We controleren uw verbinding…";
+"onboarding-join-connected" = "Verbonden!";
+
+"image-onboarding-qr" = "onboarding_qr_nl";

@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		190EA8EE1E9505CD009C08A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8AA1E9505CD009C08A7 /* AppDelegate.swift */; };
+		190EA8EF1E9505CD009C08A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190EA8AB1E9505CD009C08A7 /* Assets.xcassets */; };
+		190EA8F01E9505CD009C08A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 190EA8AC1E9505CD009C08A7 /* LaunchScreen.storyboard */; };
+		190EA8F11E9505CD009C08A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 190EA8AE1E9505CD009C08A7 /* Main.storyboard */; };
+		190EA8F21E9505CD009C08A7 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 190EA8B01E9505CD009C08A7 /* Main.strings */; };
+		190EA8F31E9505CD009C08A7 /* OnboardingSSIDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8B31E9505CD009C08A7 /* OnboardingSSIDCell.swift */; };
+		190EA8F41E9505CD009C08A7 /* AxisDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8B61E9505CD009C08A7 /* AxisDateFormatter.swift */; };
+		190EA8F51E9505CD009C08A7 /* AxisDateListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8B71E9505CD009C08A7 /* AxisDateListFormatter.swift */; };
+		190EA8F61E9505CD009C08A7 /* AxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8B81E9505CD009C08A7 /* AxisValueFormatter.swift */; };
+		190EA8F71E9505CD009C08A7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8BA1E9505CD009C08A7 /* Fonts.swift */; };
+		190EA8F81E9505CD009C08A7 /* OnboardingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8BB1E9505CD009C08A7 /* OnboardingConstants.swift */; };
+		190EA8F91E9505CD009C08A7 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8BE1E9505CD009C08A7 /* String+Localized.swift */; };
+		190EA8FA1E9505CD009C08A7 /* String+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8BF1E9505CD009C08A7 /* String+Path.swift */; };
+		190EA8FB1E9505CD009C08A7 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8C01E9505CD009C08A7 /* UIColor+Hex.swift */; };
+		190EA8FC1E9505CD009C08A7 /* PersistentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8C21E9505CD009C08A7 /* PersistentHelper.swift */; };
+		190EA8FD1E9505CD009C08A7 /* ToastHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8C31E9505CD009C08A7 /* ToastHelper.swift */; };
+		190EA8FE1E9505CD009C08A7 /* WiFiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8C41E9505CD009C08A7 /* WiFiHelper.swift */; };
+		190EA8FF1E9505CD009C08A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 190EA8C51E9505CD009C08A7 /* Info.plist */; };
+		190EA9001E9505CD009C08A7 /* MeterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8C71E9505CD009C08A7 /* MeterResult.swift */; };
+		190EA9011E9505CD009C08A7 /* MeterResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8C81E9505CD009C08A7 /* MeterResultSet.swift */; };
+		190EA9021E9505CD009C08A7 /* WlanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8C91E9505CD009C08A7 /* WlanInfo.swift */; };
+		190EA9031E9505CD009C08A7 /* WlanNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8CA1E9505CD009C08A7 /* WlanNetwork.swift */; };
+		190EA9041E9505CD009C08A7 /* LANApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8CD1E9505CD009C08A7 /* LANApiManager.swift */; };
+		190EA9051E9505CD009C08A7 /* LANBaseApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8CE1E9505CD009C08A7 /* LANBaseApiManager.swift */; };
+		190EA9061E9505CD009C08A7 /* LANRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8CF1E9505CD009C08A7 /* LANRouter.swift */; };
+		190EA9071E9505CD009C08A7 /* OnboardingApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8D11E9505CD009C08A7 /* OnboardingApiManager.swift */; };
+		190EA9081E9505CD009C08A7 /* OnboardingBaseApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8D21E9505CD009C08A7 /* OnboardingBaseApiManager.swift */; };
+		190EA9091E9505CD009C08A7 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8D31E9505CD009C08A7 /* OnboardingRouter.swift */; };
+		190EA90A1E9505CD009C08A7 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 190EA8D61E9505CD009C08A7 /* Onboarding.storyboard */; };
+		190EA90B1E9505CD009C08A7 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8D81E9505CD009C08A7 /* EntryViewController.swift */; };
+		190EA90C1E9505CD009C08A7 /* LiveUsageGraphBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8DB1E9505CD009C08A7 /* LiveUsageGraphBarViewController.swift */; };
+		190EA90D1E9505CD009C08A7 /* LiveUsageGraphEnergyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8DC1E9505CD009C08A7 /* LiveUsageGraphEnergyDayViewController.swift */; };
+		190EA90E1E9505CD009C08A7 /* LiveUsageGraphEnergyMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8DD1E9505CD009C08A7 /* LiveUsageGraphEnergyMonthViewController.swift */; };
+		190EA90F1E9505CD009C08A7 /* LiveUsageGraphEnergyYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8DE1E9505CD009C08A7 /* LiveUsageGraphEnergyYearViewController.swift */; };
+		190EA9101E9505CD009C08A7 /* LiveUsageGraphGasDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8DF1E9505CD009C08A7 /* LiveUsageGraphGasDayViewController.swift */; };
+		190EA9111E9505CD009C08A7 /* LiveUsageGraphGasMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E01E9505CD009C08A7 /* LiveUsageGraphGasMonthViewController.swift */; };
+		190EA9121E9505CD009C08A7 /* LiveUsageGraphGasYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E11E9505CD009C08A7 /* LiveUsageGraphGasYearViewController.swift */; };
+		190EA9131E9505CD009C08A7 /* LiveUsageGraphLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E21E9505CD009C08A7 /* LiveUsageGraphLineViewController.swift */; };
+		190EA9141E9505CD009C08A7 /* LiveUsageGraphPowerDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E31E9505CD009C08A7 /* LiveUsageGraphPowerDayViewController.swift */; };
+		190EA9151E9505CD009C08A7 /* LiveUsageGraphPowerHourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E41E9505CD009C08A7 /* LiveUsageGraphPowerHourViewController.swift */; };
+		190EA9161E9505CD009C08A7 /* LiveUsageGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E51E9505CD009C08A7 /* LiveUsageGraphViewController.swift */; };
+		190EA9171E9505CD009C08A7 /* LiveUsageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E61E9505CD009C08A7 /* LiveUsageViewController.swift */; };
+		190EA9181E9505CD009C08A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E71E9505CD009C08A7 /* MenuViewController.swift */; };
+		190EA9191E9505CD009C08A7 /* OnboardingChooseWiFiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8E91E9505CD009C08A7 /* OnboardingChooseWiFiViewController.swift */; };
+		190EA91A1E9505CD009C08A7 /* OnboardingConnectNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8EA1E9505CD009C08A7 /* OnboardingConnectNetworkViewController.swift */; };
+		190EA91B1E9505CD009C08A7 /* OnboardingJoinNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8EB1E9505CD009C08A7 /* OnboardingJoinNetworkViewController.swift */; };
+		190EA91C1E9505CD009C08A7 /* OnboardingPingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8EC1E9505CD009C08A7 /* OnboardingPingViewController.swift */; };
+		190EA91D1E9505CD009C08A7 /* SwitchNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8ED1E9505CD009C08A7 /* SwitchNetworkViewController.swift */; };
+		190EA91F1E950629009C08A7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 190EA91E1E950629009C08A7 /* Podfile */; };
+		196C75BA1E41E6E3000ACAED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196C75B91E41E6E3000ACAED /* SystemConfiguration.framework */; };
+		68882538EE0DF4B90E6926AF /* Pods_NET2GRID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F249EACC7CD7184258AB0463 /* Pods_NET2GRID.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		190EA8AA1E9505CD009C08A7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		190EA8AB1E9505CD009C08A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		190EA8AD1E9505CD009C08A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		190EA8AF1E9505CD009C08A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		190EA8B11E9505CD009C08A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Main.strings; sourceTree = "<group>"; };
+		190EA8B31E9505CD009C08A7 /* OnboardingSSIDCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSSIDCell.swift; sourceTree = "<group>"; };
+		190EA8B61E9505CD009C08A7 /* AxisDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisDateFormatter.swift; sourceTree = "<group>"; };
+		190EA8B71E9505CD009C08A7 /* AxisDateListFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisDateListFormatter.swift; sourceTree = "<group>"; };
+		190EA8B81E9505CD009C08A7 /* AxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisValueFormatter.swift; sourceTree = "<group>"; };
+		190EA8BA1E9505CD009C08A7 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		190EA8BB1E9505CD009C08A7 /* OnboardingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingConstants.swift; sourceTree = "<group>"; };
+		190EA8BE1E9505CD009C08A7 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		190EA8BF1E9505CD009C08A7 /* String+Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
+		190EA8C01E9505CD009C08A7 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		190EA8C21E9505CD009C08A7 /* PersistentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentHelper.swift; sourceTree = "<group>"; };
+		190EA8C31E9505CD009C08A7 /* ToastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastHelper.swift; sourceTree = "<group>"; };
+		190EA8C41E9505CD009C08A7 /* WiFiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiFiHelper.swift; sourceTree = "<group>"; };
+		190EA8C51E9505CD009C08A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		190EA8C71E9505CD009C08A7 /* MeterResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterResult.swift; sourceTree = "<group>"; };
+		190EA8C81E9505CD009C08A7 /* MeterResultSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterResultSet.swift; sourceTree = "<group>"; };
+		190EA8C91E9505CD009C08A7 /* WlanInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WlanInfo.swift; sourceTree = "<group>"; };
+		190EA8CA1E9505CD009C08A7 /* WlanNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WlanNetwork.swift; sourceTree = "<group>"; };
+		190EA8CD1E9505CD009C08A7 /* LANApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LANApiManager.swift; sourceTree = "<group>"; };
+		190EA8CE1E9505CD009C08A7 /* LANBaseApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LANBaseApiManager.swift; sourceTree = "<group>"; };
+		190EA8CF1E9505CD009C08A7 /* LANRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LANRouter.swift; sourceTree = "<group>"; };
+		190EA8D11E9505CD009C08A7 /* OnboardingApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingApiManager.swift; sourceTree = "<group>"; };
+		190EA8D21E9505CD009C08A7 /* OnboardingBaseApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBaseApiManager.swift; sourceTree = "<group>"; };
+		190EA8D31E9505CD009C08A7 /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		190EA8D41E9505CD009C08A7 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		190EA8D61E9505CD009C08A7 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		190EA8D81E9505CD009C08A7 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		190EA8DB1E9505CD009C08A7 /* LiveUsageGraphBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphBarViewController.swift; sourceTree = "<group>"; };
+		190EA8DC1E9505CD009C08A7 /* LiveUsageGraphEnergyDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphEnergyDayViewController.swift; sourceTree = "<group>"; };
+		190EA8DD1E9505CD009C08A7 /* LiveUsageGraphEnergyMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphEnergyMonthViewController.swift; sourceTree = "<group>"; };
+		190EA8DE1E9505CD009C08A7 /* LiveUsageGraphEnergyYearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphEnergyYearViewController.swift; sourceTree = "<group>"; };
+		190EA8DF1E9505CD009C08A7 /* LiveUsageGraphGasDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphGasDayViewController.swift; sourceTree = "<group>"; };
+		190EA8E01E9505CD009C08A7 /* LiveUsageGraphGasMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphGasMonthViewController.swift; sourceTree = "<group>"; };
+		190EA8E11E9505CD009C08A7 /* LiveUsageGraphGasYearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphGasYearViewController.swift; sourceTree = "<group>"; };
+		190EA8E21E9505CD009C08A7 /* LiveUsageGraphLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphLineViewController.swift; sourceTree = "<group>"; };
+		190EA8E31E9505CD009C08A7 /* LiveUsageGraphPowerDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphPowerDayViewController.swift; sourceTree = "<group>"; };
+		190EA8E41E9505CD009C08A7 /* LiveUsageGraphPowerHourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphPowerHourViewController.swift; sourceTree = "<group>"; };
+		190EA8E51E9505CD009C08A7 /* LiveUsageGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageGraphViewController.swift; sourceTree = "<group>"; };
+		190EA8E61E9505CD009C08A7 /* LiveUsageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUsageViewController.swift; sourceTree = "<group>"; };
+		190EA8E71E9505CD009C08A7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		190EA8E91E9505CD009C08A7 /* OnboardingChooseWiFiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingChooseWiFiViewController.swift; sourceTree = "<group>"; };
+		190EA8EA1E9505CD009C08A7 /* OnboardingConnectNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingConnectNetworkViewController.swift; sourceTree = "<group>"; };
+		190EA8EB1E9505CD009C08A7 /* OnboardingJoinNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingJoinNetworkViewController.swift; sourceTree = "<group>"; };
+		190EA8EC1E9505CD009C08A7 /* OnboardingPingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPingViewController.swift; sourceTree = "<group>"; };
+		190EA8ED1E9505CD009C08A7 /* SwitchNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchNetworkViewController.swift; sourceTree = "<group>"; };
+		190EA91E1E950629009C08A7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		196C75B91E41E6E3000ACAED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		198BEFB71E41D4CA0047E17E /* NET2GRID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NET2GRID.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DC76C4BD1EB17C6FF6FFB5D /* Pods_Ynni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ynni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47188B57EE94ADA61FAF703B /* Pods-NET2GRID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NET2GRID.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NET2GRID/Pods-NET2GRID.debug.xcconfig"; sourceTree = "<group>"; };
+		CE6341F9B41C34417A51D380 /* Pods-NET2GRID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NET2GRID.release.xcconfig"; path = "Pods/Target Support Files/Pods-NET2GRID/Pods-NET2GRID.release.xcconfig"; sourceTree = "<group>"; };
+		E3FBC209EB2D0CAA34505B99 /* Pods-Ynni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ynni.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ynni/Pods-Ynni.debug.xcconfig"; sourceTree = "<group>"; };
+		F249EACC7CD7184258AB0463 /* Pods_NET2GRID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NET2GRID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7366337CA6E7AF712E1E24E /* Pods-Ynni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ynni.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ynni/Pods-Ynni.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		198BEFB41E41D4C90047E17E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				196C75BA1E41E6E3000ACAED /* SystemConfiguration.framework in Frameworks */,
+				68882538EE0DF4B90E6926AF /* Pods_NET2GRID.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D78B266D490DD163AE31088 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				190EA91E1E950629009C08A7 /* Podfile */,
+				196C75B91E41E6E3000ACAED /* SystemConfiguration.framework */,
+				1DC76C4BD1EB17C6FF6FFB5D /* Pods_Ynni.framework */,
+				F249EACC7CD7184258AB0463 /* Pods_NET2GRID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		190EA8A91E9505CD009C08A7 /* NET2GRID */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8B21E9505CD009C08A7 /* Cells */,
+				190EA8B41E9505CD009C08A7 /* Chart */,
+				190EA8B91E9505CD009C08A7 /* Constants */,
+				190EA8BD1E9505CD009C08A7 /* Extensions */,
+				190EA8C11E9505CD009C08A7 /* Helpers */,
+				190EA8C61E9505CD009C08A7 /* Models */,
+				190EA8CB1E9505CD009C08A7 /* Network */,
+				190EA8D51E9505CD009C08A7 /* Storyboards */,
+				190EA8D71E9505CD009C08A7 /* ViewControllers */,
+				190EA8AA1E9505CD009C08A7 /* AppDelegate.swift */,
+				190EA8AB1E9505CD009C08A7 /* Assets.xcassets */,
+				190EA8AC1E9505CD009C08A7 /* LaunchScreen.storyboard */,
+				190EA8AE1E9505CD009C08A7 /* Main.storyboard */,
+				190EA8B01E9505CD009C08A7 /* Main.strings */,
+				190EA8C51E9505CD009C08A7 /* Info.plist */,
+			);
+			path = NET2GRID;
+			sourceTree = "<group>";
+		};
+		190EA8B21E9505CD009C08A7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8B31E9505CD009C08A7 /* OnboardingSSIDCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		190EA8B41E9505CD009C08A7 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8B51E9505CD009C08A7 /* Formatters */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		190EA8B51E9505CD009C08A7 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8B61E9505CD009C08A7 /* AxisDateFormatter.swift */,
+				190EA8B71E9505CD009C08A7 /* AxisDateListFormatter.swift */,
+				190EA8B81E9505CD009C08A7 /* AxisValueFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		190EA8B91E9505CD009C08A7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8BA1E9505CD009C08A7 /* Fonts.swift */,
+				190EA8BB1E9505CD009C08A7 /* OnboardingConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		190EA8BD1E9505CD009C08A7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8BE1E9505CD009C08A7 /* String+Localized.swift */,
+				190EA8BF1E9505CD009C08A7 /* String+Path.swift */,
+				190EA8C01E9505CD009C08A7 /* UIColor+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		190EA8C11E9505CD009C08A7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8C21E9505CD009C08A7 /* PersistentHelper.swift */,
+				190EA8C31E9505CD009C08A7 /* ToastHelper.swift */,
+				190EA8C41E9505CD009C08A7 /* WiFiHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		190EA8C61E9505CD009C08A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8C71E9505CD009C08A7 /* MeterResult.swift */,
+				190EA8C81E9505CD009C08A7 /* MeterResultSet.swift */,
+				190EA8C91E9505CD009C08A7 /* WlanInfo.swift */,
+				190EA8CA1E9505CD009C08A7 /* WlanNetwork.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		190EA8CB1E9505CD009C08A7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8CC1E9505CD009C08A7 /* LAN */,
+				190EA8D01E9505CD009C08A7 /* Onboarding */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		190EA8CC1E9505CD009C08A7 /* LAN */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8CD1E9505CD009C08A7 /* LANApiManager.swift */,
+				190EA8CE1E9505CD009C08A7 /* LANBaseApiManager.swift */,
+				190EA8CF1E9505CD009C08A7 /* LANRouter.swift */,
+			);
+			path = LAN;
+			sourceTree = "<group>";
+		};
+		190EA8D01E9505CD009C08A7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8D11E9505CD009C08A7 /* OnboardingApiManager.swift */,
+				190EA8D21E9505CD009C08A7 /* OnboardingBaseApiManager.swift */,
+				190EA8D31E9505CD009C08A7 /* OnboardingRouter.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		190EA8D51E9505CD009C08A7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8D61E9505CD009C08A7 /* Onboarding.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		190EA8D71E9505CD009C08A7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8D91E9505CD009C08A7 /* LiveUsage */,
+				190EA8E81E9505CD009C08A7 /* Onboarding */,
+				190EA8D81E9505CD009C08A7 /* EntryViewController.swift */,
+				190EA8E71E9505CD009C08A7 /* MenuViewController.swift */,
+				190EA8ED1E9505CD009C08A7 /* SwitchNetworkViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		190EA8D91E9505CD009C08A7 /* LiveUsage */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8DA1E9505CD009C08A7 /* Graphs */,
+				190EA8E51E9505CD009C08A7 /* LiveUsageGraphViewController.swift */,
+				190EA8E61E9505CD009C08A7 /* LiveUsageViewController.swift */,
+			);
+			path = LiveUsage;
+			sourceTree = "<group>";
+		};
+		190EA8DA1E9505CD009C08A7 /* Graphs */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8DB1E9505CD009C08A7 /* LiveUsageGraphBarViewController.swift */,
+				190EA8DC1E9505CD009C08A7 /* LiveUsageGraphEnergyDayViewController.swift */,
+				190EA8DD1E9505CD009C08A7 /* LiveUsageGraphEnergyMonthViewController.swift */,
+				190EA8DE1E9505CD009C08A7 /* LiveUsageGraphEnergyYearViewController.swift */,
+				190EA8DF1E9505CD009C08A7 /* LiveUsageGraphGasDayViewController.swift */,
+				190EA8E01E9505CD009C08A7 /* LiveUsageGraphGasMonthViewController.swift */,
+				190EA8E11E9505CD009C08A7 /* LiveUsageGraphGasYearViewController.swift */,
+				190EA8E21E9505CD009C08A7 /* LiveUsageGraphLineViewController.swift */,
+				190EA8E31E9505CD009C08A7 /* LiveUsageGraphPowerDayViewController.swift */,
+				190EA8E41E9505CD009C08A7 /* LiveUsageGraphPowerHourViewController.swift */,
+			);
+			path = Graphs;
+			sourceTree = "<group>";
+		};
+		190EA8E81E9505CD009C08A7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				190EA8E91E9505CD009C08A7 /* OnboardingChooseWiFiViewController.swift */,
+				190EA8EA1E9505CD009C08A7 /* OnboardingConnectNetworkViewController.swift */,
+				190EA8EB1E9505CD009C08A7 /* OnboardingJoinNetworkViewController.swift */,
+				190EA8EC1E9505CD009C08A7 /* OnboardingPingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		198BEFAE1E41D4C90047E17E = {
+			isa = PBXGroup;
+			children = (
+				190EA8A91E9505CD009C08A7 /* NET2GRID */,
+				198BEFB81E41D4CA0047E17E /* Products */,
+				EF3C7139B279B8A3D3EBFDCE /* Pods */,
+				0D78B266D490DD163AE31088 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		198BEFB81E41D4CA0047E17E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				198BEFB71E41D4CA0047E17E /* NET2GRID.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF3C7139B279B8A3D3EBFDCE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3FBC209EB2D0CAA34505B99 /* Pods-Ynni.debug.xcconfig */,
+				F7366337CA6E7AF712E1E24E /* Pods-Ynni.release.xcconfig */,
+				47188B57EE94ADA61FAF703B /* Pods-NET2GRID.debug.xcconfig */,
+				CE6341F9B41C34417A51D380 /* Pods-NET2GRID.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		198BEFB61E41D4C90047E17E /* NET2GRID */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 198BEFC91E41D4CA0047E17E /* Build configuration list for PBXNativeTarget "NET2GRID" */;
+			buildPhases = (
+				6EE8B84F65CFE72D9B14BC58 /* [CP] Check Pods Manifest.lock */,
+				198BEFB31E41D4C90047E17E /* Sources */,
+				198BEFB41E41D4C90047E17E /* Frameworks */,
+				198BEFB51E41D4C90047E17E /* Resources */,
+				BC8557AC30ABCDBB486C928E /* [CP] Embed Pods Frameworks */,
+				CD283778D2D7D8A147D51E9B /* [CP] Copy Pods Resources */,
+				19C4A5B41E5CB95D00DDE10F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NET2GRID;
+			productName = Ynni;
+			productReference = 198BEFB71E41D4CA0047E17E /* NET2GRID.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		198BEFAF1E41D4C90047E17E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Wittig;
+				TargetAttributes = {
+					198BEFB61E41D4C90047E17E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = P4V6Z7P8A4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 198BEFB21E41D4C90047E17E /* Build configuration list for PBXProject "NET2GRID" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				nl,
+			);
+			mainGroup = 198BEFAE1E41D4C90047E17E;
+			productRefGroup = 198BEFB81E41D4CA0047E17E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				198BEFB61E41D4C90047E17E /* NET2GRID */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		198BEFB51E41D4C90047E17E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				190EA8F11E9505CD009C08A7 /* Main.storyboard in Resources */,
+				190EA8F21E9505CD009C08A7 /* Main.strings in Resources */,
+				190EA8EF1E9505CD009C08A7 /* Assets.xcassets in Resources */,
+				190EA90A1E9505CD009C08A7 /* Onboarding.storyboard in Resources */,
+				190EA8FF1E9505CD009C08A7 /* Info.plist in Resources */,
+				190EA91F1E950629009C08A7 /* Podfile in Resources */,
+				190EA8F01E9505CD009C08A7 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19C4A5B41E5CB95D00DDE10F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 68f6d3e788ea876d11dcec5a8ac49e45c7eec2f1 736171277f9114990882cb97ef558dc56a944c537bea2031924e5f6a64fd2e67";
+		};
+		6EE8B84F65CFE72D9B14BC58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC8557AC30ABCDBB486C928E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NET2GRID/Pods-NET2GRID-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD283778D2D7D8A147D51E9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NET2GRID/Pods-NET2GRID-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		198BEFB31E41D4C90047E17E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				190EA90D1E9505CD009C08A7 /* LiveUsageGraphEnergyDayViewController.swift in Sources */,
+				190EA91C1E9505CD009C08A7 /* OnboardingPingViewController.swift in Sources */,
+				190EA9091E9505CD009C08A7 /* OnboardingRouter.swift in Sources */,
+				190EA8EE1E9505CD009C08A7 /* AppDelegate.swift in Sources */,
+				190EA8F61E9505CD009C08A7 /* AxisValueFormatter.swift in Sources */,
+				190EA9141E9505CD009C08A7 /* LiveUsageGraphPowerDayViewController.swift in Sources */,
+				190EA9111E9505CD009C08A7 /* LiveUsageGraphGasMonthViewController.swift in Sources */,
+				190EA9041E9505CD009C08A7 /* LANApiManager.swift in Sources */,
+				190EA8F91E9505CD009C08A7 /* String+Localized.swift in Sources */,
+				190EA90B1E9505CD009C08A7 /* EntryViewController.swift in Sources */,
+				190EA9151E9505CD009C08A7 /* LiveUsageGraphPowerHourViewController.swift in Sources */,
+				190EA8F81E9505CD009C08A7 /* OnboardingConstants.swift in Sources */,
+				190EA8F51E9505CD009C08A7 /* AxisDateListFormatter.swift in Sources */,
+				190EA9081E9505CD009C08A7 /* OnboardingBaseApiManager.swift in Sources */,
+				190EA9011E9505CD009C08A7 /* MeterResultSet.swift in Sources */,
+				190EA8F41E9505CD009C08A7 /* AxisDateFormatter.swift in Sources */,
+				190EA9021E9505CD009C08A7 /* WlanInfo.swift in Sources */,
+				190EA91D1E9505CD009C08A7 /* SwitchNetworkViewController.swift in Sources */,
+				190EA91B1E9505CD009C08A7 /* OnboardingJoinNetworkViewController.swift in Sources */,
+				190EA90E1E9505CD009C08A7 /* LiveUsageGraphEnergyMonthViewController.swift in Sources */,
+				190EA8FE1E9505CD009C08A7 /* WiFiHelper.swift in Sources */,
+				190EA9061E9505CD009C08A7 /* LANRouter.swift in Sources */,
+				190EA9101E9505CD009C08A7 /* LiveUsageGraphGasDayViewController.swift in Sources */,
+				190EA91A1E9505CD009C08A7 /* OnboardingConnectNetworkViewController.swift in Sources */,
+				190EA9051E9505CD009C08A7 /* LANBaseApiManager.swift in Sources */,
+				190EA8F71E9505CD009C08A7 /* Fonts.swift in Sources */,
+				190EA8FD1E9505CD009C08A7 /* ToastHelper.swift in Sources */,
+				190EA9031E9505CD009C08A7 /* WlanNetwork.swift in Sources */,
+				190EA90F1E9505CD009C08A7 /* LiveUsageGraphEnergyYearViewController.swift in Sources */,
+				190EA9191E9505CD009C08A7 /* OnboardingChooseWiFiViewController.swift in Sources */,
+				190EA8F31E9505CD009C08A7 /* OnboardingSSIDCell.swift in Sources */,
+				190EA9181E9505CD009C08A7 /* MenuViewController.swift in Sources */,
+				190EA9121E9505CD009C08A7 /* LiveUsageGraphGasYearViewController.swift in Sources */,
+				190EA9071E9505CD009C08A7 /* OnboardingApiManager.swift in Sources */,
+				190EA9171E9505CD009C08A7 /* LiveUsageViewController.swift in Sources */,
+				190EA8FA1E9505CD009C08A7 /* String+Path.swift in Sources */,
+				190EA8FC1E9505CD009C08A7 /* PersistentHelper.swift in Sources */,
+				190EA9001E9505CD009C08A7 /* MeterResult.swift in Sources */,
+				190EA90C1E9505CD009C08A7 /* LiveUsageGraphBarViewController.swift in Sources */,
+				190EA8FB1E9505CD009C08A7 /* UIColor+Hex.swift in Sources */,
+				190EA9161E9505CD009C08A7 /* LiveUsageGraphViewController.swift in Sources */,
+				190EA9131E9505CD009C08A7 /* LiveUsageGraphLineViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		190EA8AC1E9505CD009C08A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				190EA8AD1E9505CD009C08A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		190EA8AE1E9505CD009C08A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				190EA8AF1E9505CD009C08A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		190EA8B01E9505CD009C08A7 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				190EA8B11E9505CD009C08A7 /* Base */,
+				190EA8D41E9505CD009C08A7 /* nl */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		198BEFC71E41D4CA0047E17E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		198BEFC81E41D4CA0047E17E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		198BEFCA1E41D4CA0047E17E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47188B57EE94ADA61FAF703B /* Pods-NET2GRID.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = P4V6Z7P8A4;
+				INFOPLIST_FILE = "$(SRCROOT)/NET2GRID/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.wittig.net2grid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		198BEFCB1E41D4CA0047E17E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6341F9B41C34417A51D380 /* Pods-NET2GRID.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = P4V6Z7P8A4;
+				INFOPLIST_FILE = "$(SRCROOT)/NET2GRID/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.wittig.net2grid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		198BEFB21E41D4C90047E17E /* Build configuration list for PBXProject "NET2GRID" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				198BEFC71E41D4CA0047E17E /* Debug */,
+				198BEFC81E41D4CA0047E17E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		198BEFC91E41D4CA0047E17E /* Build configuration list for PBXNativeTarget "NET2GRID" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				198BEFCA1E41D4CA0047E17E /* Debug */,
+				198BEFCB1E41D4CA0047E17E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 198BEFAF1E41D4C90047E17E /* Project object */;
+}
