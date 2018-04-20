@@ -5,6 +5,10 @@
 "general-ok" = "OK";
 "general-seconds" = "seconden";
 "general-second" = "seconde";
+"general-yes-capital" = "Ja";
+"general-no-capital" = "Nee";
+"general-yes" = "Ja";
+"general-no" = "Nee";
 
 /* ENTRY */
 "entry-message" = "We controleren uw verbinding";
@@ -60,7 +64,11 @@
 "onboarding-choose-wifi-password-placeholder" = "Wachtwoord…";
 
 /* ONBOARDING: Join */
+"onboarding-join-check-smartbridge-online" = "Is de SmartBridge gestopt met knipperen?";
 "onboarding-join-title" = "We controleren uw verbinding…";
 "onboarding-join-connected" = "Verbonden!";
+
+/* ONBOARDING: Bluetooth */
+"onboarding-bluetooth-title" = "Het volgende apparaat wil graag verbinden";
 
 "image-onboarding-qr" = "onboarding_qr_nl";

@@ -15,5 +15,6 @@ target 'NET2GRID' do
   pod 'ObjectMapper', '~> 2.2.2'
   pod 'SideMenu', '~> 2.2'
   pod 'APESuperHUD', '~> 1.1'
+  pod 'SwiftyGif', '~> 4.1.0'
 
 end

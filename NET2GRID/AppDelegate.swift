@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if(PersistentHelper.wlanInfo() != nil){
+        if(PersistentHelper.ssid() != nil){
             initialViewController = storyboard.instantiateViewController(withIdentifier: LiveUsageViewController.storyboardIdentifier)
         }
         else {

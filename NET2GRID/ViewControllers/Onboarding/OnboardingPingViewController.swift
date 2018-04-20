@@ -24,6 +24,8 @@ class OnboardingPingViewController: UIViewController
     fileprivate var pingAttemptCount = 0
     fileprivate var networks: [WlanNetwork]?
     
+    var reconnectMode: Bool = false
+    
     override func viewDidLoad() {
         
         waitingLabel.text = "onboarding-ping-title".localized
@@ -57,7 +59,7 @@ class OnboardingPingViewController: UIViewController
                 log.info("Ping result: connected via Ethernet")
                 
                 if let info = self.infoResult {
-                    PersistentHelper.storeWlanInfo(info)
+                    PersistentHelper.storeSsid(info.clientSsid)
                 }
                 
                 self.showConnected()
@@ -126,10 +128,17 @@ class OnboardingPingViewController: UIViewController
     
     func proceedToLive(){
         
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: LiveUsageViewController.storyboardIdentifier)
+        if reconnectMode {
+            
+            dismiss(animated: true, completion: nil)
+        }
+        else {
         
-        navigationController?.pushViewController(viewController, animated: true)
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: LiveUsageViewController.storyboardIdentifier)
+            
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -138,6 +147,7 @@ class OnboardingPingViewController: UIViewController
             
             if let destination = segue.destination as? OnboardingChooseWiFiViewController {
                 
+                destination.reconnectMode = reconnectMode
                 destination.networks = networks
             }
         }

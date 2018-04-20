@@ -56,6 +56,11 @@
 		190EA91C1E9505CD009C08A7 /* OnboardingPingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8EC1E9505CD009C08A7 /* OnboardingPingViewController.swift */; };
 		190EA91D1E9505CD009C08A7 /* SwitchNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA8ED1E9505CD009C08A7 /* SwitchNetworkViewController.swift */; };
 		190EA91F1E950629009C08A7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 190EA91E1E950629009C08A7 /* Podfile */; };
+		191DD48B207F98E800A2B03F /* OnboardingBluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191DD48A207F98E800A2B03F /* OnboardingBluetoothViewController.swift */; };
+		191DD48D207F993B00A2B03F /* BluetoothOnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191DD48C207F993B00A2B03F /* BluetoothOnboardingManager.swift */; };
+		191DD48F207F99C900A2B03F /* bluetooth_animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 191DD48E207F99C900A2B03F /* bluetooth_animation.gif */; };
+		191DD4912080B11900A2B03F /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191DD4902080B11900A2B03F /* Data+Hex.swift */; };
+		191DD4932080B15A00A2B03F /* SwiftyBeaver+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191DD4922080B15A00A2B03F /* SwiftyBeaver+Shortcuts.swift */; };
 		196C75BA1E41E6E3000ACAED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196C75B91E41E6E3000ACAED /* SystemConfiguration.framework */; };
 		68882538EE0DF4B90E6926AF /* Pods_NET2GRID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F249EACC7CD7184258AB0463 /* Pods_NET2GRID.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +116,11 @@
 		190EA8EC1E9505CD009C08A7 /* OnboardingPingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPingViewController.swift; sourceTree = "<group>"; };
 		190EA8ED1E9505CD009C08A7 /* SwitchNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchNetworkViewController.swift; sourceTree = "<group>"; };
 		190EA91E1E950629009C08A7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		191DD48A207F98E800A2B03F /* OnboardingBluetoothViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBluetoothViewController.swift; sourceTree = "<group>"; };
+		191DD48C207F993B00A2B03F /* BluetoothOnboardingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothOnboardingManager.swift; sourceTree = "<group>"; };
+		191DD48E207F99C900A2B03F /* bluetooth_animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bluetooth_animation.gif; sourceTree = "<group>"; };
+		191DD4902080B11900A2B03F /* Data+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
+		191DD4922080B15A00A2B03F /* SwiftyBeaver+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftyBeaver+Shortcuts.swift"; sourceTree = "<group>"; };
 		196C75B91E41E6E3000ACAED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		198BEFB71E41D4CA0047E17E /* NET2GRID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NET2GRID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC76C4BD1EB17C6FF6FFB5D /* Pods_Ynni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ynni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +169,7 @@
 				190EA8D71E9505CD009C08A7 /* ViewControllers */,
 				190EA8AA1E9505CD009C08A7 /* AppDelegate.swift */,
 				190EA8AB1E9505CD009C08A7 /* Assets.xcassets */,
+				191DD48E207F99C900A2B03F /* bluetooth_animation.gif */,
 				190EA8AC1E9505CD009C08A7 /* LaunchScreen.storyboard */,
 				190EA8AE1E9505CD009C08A7 /* Main.storyboard */,
 				190EA8B01E9505CD009C08A7 /* Main.strings */,
@@ -205,9 +216,11 @@
 		190EA8BD1E9505CD009C08A7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				191DD4902080B11900A2B03F /* Data+Hex.swift */,
 				190EA8BE1E9505CD009C08A7 /* String+Localized.swift */,
 				190EA8BF1E9505CD009C08A7 /* String+Path.swift */,
 				190EA8C01E9505CD009C08A7 /* UIColor+Hex.swift */,
+				191DD4922080B15A00A2B03F /* SwiftyBeaver+Shortcuts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 		190EA8C11E9505CD009C08A7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				191DD48C207F993B00A2B03F /* BluetoothOnboardingManager.swift */,
 				190EA8C21E9505CD009C08A7 /* PersistentHelper.swift */,
 				190EA8C31E9505CD009C08A7 /* ToastHelper.swift */,
 				190EA8C41E9505CD009C08A7 /* WiFiHelper.swift */,
@@ -312,6 +326,7 @@
 		190EA8E81E9505CD009C08A7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				191DD48A207F98E800A2B03F /* OnboardingBluetoothViewController.swift */,
 				190EA8E91E9505CD009C08A7 /* OnboardingChooseWiFiViewController.swift */,
 				190EA8EA1E9505CD009C08A7 /* OnboardingConnectNetworkViewController.swift */,
 				190EA8EB1E9505CD009C08A7 /* OnboardingJoinNetworkViewController.swift */,
@@ -414,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191DD48F207F99C900A2B03F /* bluetooth_animation.gif in Resources */,
 				190EA8F11E9505CD009C08A7 /* Main.storyboard in Resources */,
 				190EA8F21E9505CD009C08A7 /* Main.strings in Resources */,
 				190EA8EF1E9505CD009C08A7 /* Assets.xcassets in Resources */,
@@ -502,15 +518,18 @@
 				190EA9041E9505CD009C08A7 /* LANApiManager.swift in Sources */,
 				190EA8F91E9505CD009C08A7 /* String+Localized.swift in Sources */,
 				190EA90B1E9505CD009C08A7 /* EntryViewController.swift in Sources */,
+				191DD48D207F993B00A2B03F /* BluetoothOnboardingManager.swift in Sources */,
 				190EA9151E9505CD009C08A7 /* LiveUsageGraphPowerHourViewController.swift in Sources */,
 				190EA8F81E9505CD009C08A7 /* OnboardingConstants.swift in Sources */,
 				190EA8F51E9505CD009C08A7 /* AxisDateListFormatter.swift in Sources */,
+				191DD48B207F98E800A2B03F /* OnboardingBluetoothViewController.swift in Sources */,
 				190EA9081E9505CD009C08A7 /* OnboardingBaseApiManager.swift in Sources */,
 				190EA9011E9505CD009C08A7 /* MeterResultSet.swift in Sources */,
 				190EA8F41E9505CD009C08A7 /* AxisDateFormatter.swift in Sources */,
 				190EA9021E9505CD009C08A7 /* WlanInfo.swift in Sources */,
 				190EA91D1E9505CD009C08A7 /* SwitchNetworkViewController.swift in Sources */,
 				190EA91B1E9505CD009C08A7 /* OnboardingJoinNetworkViewController.swift in Sources */,
+				191DD4912080B11900A2B03F /* Data+Hex.swift in Sources */,
 				190EA90E1E9505CD009C08A7 /* LiveUsageGraphEnergyMonthViewController.swift in Sources */,
 				190EA8FE1E9505CD009C08A7 /* WiFiHelper.swift in Sources */,
 				190EA9061E9505CD009C08A7 /* LANRouter.swift in Sources */,
@@ -521,6 +540,7 @@
 				190EA8FD1E9505CD009C08A7 /* ToastHelper.swift in Sources */,
 				190EA9031E9505CD009C08A7 /* WlanNetwork.swift in Sources */,
 				190EA90F1E9505CD009C08A7 /* LiveUsageGraphEnergyYearViewController.swift in Sources */,
+				191DD4932080B15A00A2B03F /* SwiftyBeaver+Shortcuts.swift in Sources */,
 				190EA9191E9505CD009C08A7 /* OnboardingChooseWiFiViewController.swift in Sources */,
 				190EA8F31E9505CD009C08A7 /* OnboardingSSIDCell.swift in Sources */,
 				190EA9181E9505CD009C08A7 /* MenuViewController.swift in Sources */,

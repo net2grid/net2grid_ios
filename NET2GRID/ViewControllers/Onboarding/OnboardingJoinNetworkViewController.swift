@@ -22,8 +22,20 @@ class OnboardingJoinNetworkViewController: UIViewController
     fileprivate var network: WlanNetwork?
     fileprivate var password: String?
     
+    var bluetoothManager: BluetoothOnboardingManager?
+    var bluetoothDevice: BluetoothDevice?
+    var bluetoothMode = false
+    
     fileprivate var joinAttemptCount = 0
     fileprivate var infoAttemptCount = 0
+    
+    fileprivate var infoTimeoutExpired = false
+    fileprivate var connected = false
+    
+    fileprivate var infoExpireTimer: Timer?
+    fileprivate var infoRetryTimer: Timer?
+    
+    var reconnectMode: Bool = false
     
     override func viewDidLoad() {
         
@@ -52,6 +64,29 @@ class OnboardingJoinNetworkViewController: UIViewController
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    fileprivate func reportJoinError(){
+        
+        ToastHelper.error("onboarding-join-error".localized, inView: navigationController!.view)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    fileprivate func confirmCheckSmartBridge(){
+        
+        let alertController = UIAlertController(title: "onboarding-join-check-smartbridge-online".localized, message: nil, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "general-yes-capital".localized, style: .default, handler: { (action) in
+            
+            self.startInfoCalls()
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "general-no-capital".localized, style: .default, handler: { (action) in
+            
+            self.reportConnectionLost();
+        }))
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     fileprivate func joinNetwork() {
         
         guard joinAttemptCount < OnboardingConstants.joinRetryCount else {
@@ -63,20 +98,75 @@ class OnboardingJoinNetworkViewController: UIViewController
         joinAttemptCount += 1
         log.info("Joining network \(network!.ssid) attempt \(joinAttemptCount)")
         
-        OnboardingApiManager.sharedManger.join(network!, password: password) { error in
+        
+        if bluetoothMode, let manager = bluetoothManager {
             
-            guard error == nil else {
+            manager.executeJoin(ssid: network!.ssid, password: password) { error in
                 
-                log.error("Error joining network: " + (error?.description ?? ""))
-                self.joinNetwork()
+                guard error == nil else {
+                    
+                    if let joinError = error as? BluetoothOnboardingManager.JoinError, case .errorResponse = joinError  {
+                        
+                        log.error("Join responded with error")
+                        self.reportJoinError()
+                    }
+                    else {
+                        
+                        log.error("Error joining network: " + (error?.localizedDescription ?? ""))
+                        self.joinNetwork()
+                    }
+                    
+                    return
+                }
                 
-                return
+                log.info("Successfully joined network via BlueTooth, resuming")
+                
+                PersistentHelper.storeSsid(self.network!.ssid)
+                
+                self.connected = true
+                self.showConnected()
             }
-            
-            log.info("Successfully joined network, getting info...")
-            
-            self.checkInfo()
         }
+        else {
+            
+            OnboardingApiManager.sharedManger.join(network!, password: password) { error in
+                
+                guard error == nil else {
+                    
+                    log.error("Error joining network: " + (error?.description ?? ""))
+                    self.joinNetwork()
+                    
+                    return
+                }
+                
+                log.info("Successfully joined network via WiFi, getting info...")
+                
+                self.startInfoCalls()
+            }
+        }
+    }
+    
+    fileprivate func startInfoCalls(){
+        
+        infoAttemptCount = 0;
+        infoTimeoutExpired = false
+        
+        infoExpireTimer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(infoExpired), userInfo: nil, repeats: false)
+        
+        checkInfo()
+    }
+    
+    @objc fileprivate func infoExpired(){
+        
+        if let retryTimer = infoExpireTimer {
+            retryTimer.invalidate()
+            infoExpireTimer = nil
+        }
+        
+        infoTimeoutExpired = true
+        
+        // Failed
+        confirmCheckSmartBridge()
     }
     
     @objc fileprivate func checkInfo() {
@@ -87,24 +177,31 @@ class OnboardingJoinNetworkViewController: UIViewController
         let apiManager = OnboardingApiManager.sharedManger
         apiManager.info { info, error in
             
-            if info == nil || error != nil {
-                
-                log.error("Received info error: " + (error?.description ?? ""))
-                
-                if self.infoAttemptCount >= OnboardingConstants.joinRetryCount {
-                    self.reportConnectionLost()
-                }
-                else {
-                    self.checkInfo()
-                }
-                
+            if self.infoTimeoutExpired || self.connected {
                 return
             }
             
-            log.info("Info Check success after number of attempts: \(self.infoAttemptCount)")
-            
-            PersistentHelper.storeWlanInfo(info!)
-            self.showConnected()
+            if info == nil || error != nil {
+                
+                log.warning("Received info error: " + (error?.description ?? ""))
+                log.info("Info Check success after number of attempts: \(self.infoAttemptCount)")
+                
+                if let expireTimer = self.infoExpireTimer {
+                    expireTimer.invalidate()
+                    self.infoExpireTimer = nil;
+                }
+                
+                PersistentHelper.storeSsid(self.network!.ssid)
+                
+                self.connected = true
+                self.showConnected()
+            }
+            else {
+                
+                log.info("Info call still available, retrying in 10 sec...")
+                
+                self.infoRetryTimer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(self.checkInfo), userInfo: nil, repeats: false)
+            }
         }
     }
 
@@ -131,9 +228,16 @@ class OnboardingJoinNetworkViewController: UIViewController
     
     func proceedToLive(){
         
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: LiveUsageViewController.storyboardIdentifier)
-        
-        navigationController?.pushViewController(viewController, animated: true)
+        if reconnectMode {
+            
+            dismiss(animated: true, completion: nil)
+        }
+        else {
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: LiveUsageViewController.storyboardIdentifier)
+            
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }

@@ -13,31 +13,21 @@ class PersistentHelper
 {
     struct Keys {
         
-        static let wlanInfo = "wlanInfo"
+        static let ssid = "ssid"
     }
     
-    class func wlanInfo() -> WlanInfo? {
+    class func ssid() -> String? {
     
-        if let json = UserDefaults.standard.string(forKey: Keys.wlanInfo) {
-            
-            return Mapper<WlanInfo>().map(JSONString: json)
-        }
-        
-        return nil
+        return UserDefaults.standard.string(forKey: Keys.ssid)
     }
     
-    class func storeWlanInfo(_ info: WlanInfo) -> Bool {
+    class func storeSsid(_ ssid: String) -> Bool {
         
-        if let json = info.toJSONString() {
-            
-            log.info("Storing Wlan info: \(json)")
-            
-            UserDefaults.standard.set(json, forKey: Keys.wlanInfo)
-            UserDefaults.standard.synchronize()
-            
-            return true
-        }
+        log.info("Storing Wlan ssid: \(ssid)")
         
-        return false
+        UserDefaults.standard.set(ssid, forKey: Keys.ssid)
+        UserDefaults.standard.synchronize()
+        
+        return true
     }
 }

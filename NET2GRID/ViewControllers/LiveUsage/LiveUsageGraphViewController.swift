@@ -160,8 +160,13 @@ class LiveUsageGraphViewController: UIViewController {
         
         started = true
         
-        updateTimer = Timer.scheduledTimer(timeInterval: currentRefreshInterval, target: self, selector: #selector(fetchData), userInfo: nil, repeats: true)
-        fetchData()
+        
+        let timeout = Double(Double(arc4random_uniform(200)) / 100.0)
+        
+        updateTimer = Timer.scheduledTimer(timeInterval: currentRefreshInterval + timeout, target: self, selector: #selector(fetchData), userInfo: nil, repeats: true)
+        
+        // Execute first request after random timeout, because the server blocks simultaneous requests
+        Timer.scheduledTimer(timeInterval: timeout, target: self, selector: #selector(fetchData), userInfo: nil, repeats: false)
     }
     
     fileprivate func stop(){

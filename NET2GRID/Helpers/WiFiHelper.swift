@@ -37,9 +37,9 @@ class WiFiHelper {
             return false
         }
         
-        if let info = PersistentHelper.wlanInfo() {
+        if let ssid = PersistentHelper.ssid() {
             
-            return info.clientSsid == network;
+            return ssid == network;
         }
         
         return true

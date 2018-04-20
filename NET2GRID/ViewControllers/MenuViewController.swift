@@ -22,8 +22,8 @@ class MenuViewController: UIViewController {
     
     @IBAction func onboardingTap() {
         
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        let viewController: OnboardingConnectNetworkViewController? = storyboard.instantiateInitialViewController() as? OnboardingConnectNetworkViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController: EntryViewController? = storyboard.instantiateViewController(withIdentifier: EntryViewController.storyboardIdentifier) as? EntryViewController
         viewController?.reconnectMode = true
         
         let navigationController = UINavigationController(rootViewController: viewController!)

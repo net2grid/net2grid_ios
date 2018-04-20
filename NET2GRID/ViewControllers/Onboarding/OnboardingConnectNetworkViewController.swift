@@ -10,6 +10,8 @@ import UIKit
 
 class OnboardingConnectNetworkViewController: UIViewController
 {
+    static let storyboardIdentifier = "OnboardingConnectNetworkViewController"
+    
     fileprivate var checkTimer: Timer?
     fileprivate var infoCheckAttemptsCounter = 0
     fileprivate var infoResult: WlanInfo?
@@ -146,7 +148,7 @@ class OnboardingConnectNetworkViewController: UIViewController
             if info.mode == WlanInfo.Mode.client {
                 
                 // Client mode, connection available
-                PersistentHelper.storeWlanInfo(info)
+                PersistentHelper.storeSsid(info.clientSsid)
                 self.reportConnectionAvailable(true)
             }
             else {
@@ -167,6 +169,7 @@ class OnboardingConnectNetworkViewController: UIViewController
         
         if segue.identifier == "ConnectNetworkPingSegue", let destination = segue.destination as? OnboardingPingViewController {
             
+            destination.reconnectMode = reconnectMode
             destination.infoResult = infoResult
         }
     }

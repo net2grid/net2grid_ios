@@ -13,7 +13,7 @@ class WlanNetwork: Mappable {
     
     var ssid: String = ""
     var rssi: Int = 0
-    var encryption: Bool = false
+    var encryption: Bool?
     
     required init?(map: Map) {
         
@@ -25,3 +25,4 @@ class WlanNetwork: Mappable {
         self.encryption <- (map["encryption"])
     }
 }
+

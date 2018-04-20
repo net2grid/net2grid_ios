@@ -33,7 +33,7 @@ class SwitchNetworkViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        if let network = WiFiHelper.getCurrentSSID(), let info = PersistentHelper.wlanInfo() {
+        if let network = WiFiHelper.getCurrentSSID(), let ssid = PersistentHelper.ssid() {
             
             let boldAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 22.0)!]
             
@@ -41,7 +41,7 @@ class SwitchNetworkViewController: UIViewController {
             attributedText.append(NSAttributedString(string: "switch-network-current-1".localized + " "))
             attributedText.append(NSAttributedString(string: network, attributes: boldAttributes))
             attributedText.append(NSAttributedString(string: " " + "switch-network-current-2".localized + " "))
-            attributedText.append(NSAttributedString(string: info.clientSsid, attributes: boldAttributes))
+            attributedText.append(NSAttributedString(string: ssid, attributes: boldAttributes))
             attributedText.append(NSAttributedString(string: "switch-network-current-3".localized))
             
             currentNetworkLabel.attributedText = attributedText

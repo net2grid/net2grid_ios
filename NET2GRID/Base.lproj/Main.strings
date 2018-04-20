@@ -5,6 +5,10 @@
 "general-ok" = "OK";
 "general-seconds" = "seconds";
 "general-second" = "second";
+"general-yes-capital" = "Yes";
+"general-no-capital" = "No";
+"general-yes" = "Yes";
+"general-no" = "No";
 
 /* ENTRY */
 "entry-message" = "We are checking your connection";
@@ -60,7 +64,11 @@
 "onboarding-choose-wifi-password-placeholder" = "Password...";
 
 /* ONBOARDING: Join */
+"onboarding-join-check-smartbridge-online" = "Did the SmartBridge stop blinking?";
 "onboarding-join-title" = "We are verifying your connection...";
 "onboarding-join-connected" = "Connected!";
+
+/* ONBOARDING: Bluetooth */
+"onboarding-bluetooth-title" = "The following device would like to connect";
 
 "image-onboarding-qr" = "onboarding_qr";

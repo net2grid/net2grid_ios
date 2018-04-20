@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class OnboardingChooseWiFiViewController: UIViewController
 {
+    private static let initialTimeout: TimeInterval = 20.0
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     
     fileprivate var networkRefreshTimer: Timer?
     public var networks: [WlanNetwork]?
@@ -19,11 +25,33 @@ class OnboardingChooseWiFiViewController: UIViewController
     fileprivate var selectedNetwork: WlanNetwork?
     fileprivate var selectedPassword: String?
     
+    var bluetoothManager: BluetoothOnboardingManager?
+    var bluetoothDevice: BluetoothDevice?
+    var bluetoothMode = false
+    
+    var initialTimeoutTimer: Timer?
+    
+    var reconnectMode: Bool = false
+    
+    
     override func viewDidLoad() {
         
         titleLabel.text = "onboarding-choose-wifi-title".localized
         
         tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 20.0, right: 0.0)
+        
+        if bluetoothMode {
+            
+            activityIndicatorView.isHidden = false
+            activityIndicatorView.startAnimating()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        closeButton.isHidden = !reconnectMode
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,6 +68,10 @@ class OnboardingChooseWiFiViewController: UIViewController
         super.viewDidAppear(animated)
         
         startRefreshing()
+        
+        if bluetoothMode {
+            initialTimeoutTimer = Timer.scheduledTimer(timeInterval: OnboardingChooseWiFiViewController.initialTimeout, target: self, selector: #selector(reportConnectionLost), userInfo: nil, repeats: false)
+        }
     }
     
     func selectNetwork(network: WlanNetwork, password: String?){
@@ -50,12 +82,36 @@ class OnboardingChooseWiFiViewController: UIViewController
         performSegue(withIdentifier: "ChooseWiFiJoinNetworkSegue", sender: self)
     }
     
+    @objc fileprivate func reportConnectionLost(){
+        
+        if bluetoothMode, let manager = bluetoothManager {
+            manager.disconnectSmartBridge()
+        }
+        
+        ToastHelper.error("general-error-connection-lost".localized, inView: navigationController!.view)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "ChooseWiFiJoinNetworkSegue", let destination = segue.destination as? OnboardingJoinNetworkViewController, let network = selectedNetwork {
             
+            destination.reconnectMode = reconnectMode
+            destination.bluetoothManager = bluetoothManager
+            destination.bluetoothDevice = bluetoothDevice
+            destination.bluetoothMode = bluetoothMode
+            
             destination.setNetwork(network, password: selectedPassword)
         }
+    }
+    
+    @IBAction func closeTap() {
+        
+        if let manager = bluetoothManager {
+            manager.disconnectSmartBridge()
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -72,18 +128,46 @@ extension OnboardingChooseWiFiViewController {
         
         log.info("Refreshing networks..")
         
-        OnboardingApiManager.sharedManger.scan { (networks, response, error) in
+        if bluetoothMode, let manager = bluetoothManager {
             
-            guard let networks = networks, error == nil else {
+            manager.executeApScan { (networks, error) in
                 
-                log.error("Error loading networks: " + (error?.description ?? ""))
-                return
+                guard let networks = networks, error == nil else {
+                    
+                    log.error("Error loading networks: " + (error?.localizedDescription ?? ""))
+                    return
+                }
+                
+                if let timeoutTimer = self.initialTimeoutTimer {
+                    
+                    timeoutTimer.invalidate()
+                    self.initialTimeoutTimer = nil
+                }
+                
+                log.info("Bluetooth: Networks loaded")
+                
+                self.networks = networks
+                self.tableView.reloadData()
+                
+                self.activityIndicatorView.isHidden = true
+                self.activityIndicatorView.stopAnimating()
             }
+        }
+        else {
             
-            log.info("Networks loaded")
-            
-            self.networks = networks
-            self.tableView.reloadData()
+            OnboardingApiManager.sharedManger.scan { (networks, response, error) in
+                
+                guard let networks = networks, error == nil else {
+                    
+                    log.error("Error loading networks: " + (error?.description ?? ""))
+                    return
+                }
+                
+                log.info("WiFi: Networks loaded")
+                
+                self.networks = networks
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -127,7 +211,7 @@ extension OnboardingChooseWiFiViewController: UITableViewDelegate {
         
         let network = networks[indexPath.row]
         
-        if network.encryption {
+        if let encryption = network.encryption, encryption == true {
             
             let alertController = UIAlertController(title: network.ssid, message: "onboarding-choose-wifi-password-title".localized, preferredStyle: .alert)
             alertController.addTextField(configurationHandler: { (textField) in
